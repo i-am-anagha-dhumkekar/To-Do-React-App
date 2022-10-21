@@ -1,23 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header";
+import { useEffect, useState } from "react";
+import Input from "./components/Input";
+import Display from "./components/Display";
 
 function App() {
+ 
+  const [list, setlist]=useState( ()=>
+    {const saved = localStorage.getItem("list");
+    const initialValue = JSON.parse(saved);
+    return initialValue || [];});
+  const addtolist=(obj)=>{
+    setlist((prev)=>{
+      return[
+        ...prev,
+          obj
+      ];
+    });
+  }
+  const deletetodo=(id)=>{
+    setlist((prev)=>{
+      return prev.filter((element,index)=>index!==id);
+    });
+  }
+  useEffect(()=>{
+    localStorage.setItem('list', JSON.stringify(list)); }, [list]
+  );
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <Input addtolist={addtolist} />
+      {
+        list.map((element,index)=>
+        {
+          return(
+            <Display key={index}
+            id={index}
+            content={element.content}
+            onDelete={deletetodo} />
+          )
+        })
+      }
     </div>
   );
 }

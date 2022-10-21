@@ -1,0 +1,71 @@
+.header{
+    background-color:#F65F5F;
+    margin: auto -16px;
+    padding: 16px 32px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  }  
+.header h1{
+    color: #fff;
+    font-family: "McLaren", cursive;
+    font-weight: 200;
+  }
+  .todo {
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 0 2px 5px #ccc;
+    padding: 1%;
+    width: 70%;
+    margin:1% 10% 1% 10%;
+    float: left;
+  }
+  .todo h3 {
+    font-size: 1.1em;
+  }
+  
+  .todo button {
+    position: relative;
+    float: right;
+    margin-right: 2%;
+    background-color: #F65F5F;
+    color:white;
+    border: none;
+    width: 8%;
+    height: 50%;
+    padding:1%;
+    border-radius: 7px;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .form {
+    position: relative;
+    width: 480px;
+    margin: 30px auto 20px auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: 0 1px 5px rgb(138, 137, 137);
+  }
+  .form textarea {
+    width: 100%;
+    border: none;
+    padding: 4px;
+    outline: none;
+    font-size: 1.2em;
+    font-family: inherit;
+    resize: none;
+  }
+  .form button {
+    position: absolute;
+    right: 18px;
+    bottom: -18px;
+    background-color: #F65F5F;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    outline: none;
+  }
